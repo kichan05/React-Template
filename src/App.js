@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {GlobalStyle, Theme} from "./style/GlobalStyle";
+import {ThemeProvider} from "styled-components";
+import {useEffect} from "react";
+import Button from "./component/Button";
 
 function App() {
+  const handleResize = () => {
+    const vh = window.innerHeight / 100;
+    document.documentElement.style.setProperty("--vh", `${vh}px`)
+  }
+  useEffect(() => {
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle/>
+        <Button>버튼</Button>
+      </ThemeProvider>
     </div>
   );
 }
