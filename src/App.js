@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={Theme}>
         <GlobalStyle/>
-        <Button>버튼</Button>
+        <Button background={"Indigo6"}>버튼</Button>
       </ThemeProvider>
     </div>
   );
