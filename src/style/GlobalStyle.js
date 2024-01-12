@@ -1,10 +1,17 @@
 import {createGlobalStyle} from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: SUIT;
+    src: url("./../font/SUIT-Variable.ttf");
+  }
+  
   *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    font-family: SUIT, serif;
   }
   
   body {
@@ -179,7 +186,9 @@ export const Theme = {
     Orange6: "#fd7e14",
     Orange7: "#f76707",
     Orange8: "#e8590c",
-    Orange9: "#d9480f"
+    Orange9: "#d9480f",
+
+    HeechanBlue : "#586FE9",
   },
   size: {
 
