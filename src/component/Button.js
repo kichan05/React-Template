@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import {darken, lighten} from "polished";
+import {backgrounds, darken, lighten} from "polished";
 
 const ButtonColor = css`
   ${({theme, background}) => {
@@ -9,7 +9,6 @@ const ButtonColor = css`
     } else {
       bgColor = theme.color[background]
     }
-
 
     return css`
       background-color: ${bgColor};
@@ -33,13 +32,23 @@ const ButtonStyle = styled.button`
   border-radius: 6px;
   padding: 12px;
 
-  ${ButtonColor}
+  ${ButtonColor};
+  
+  transition: 200ms;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
 `
 
-const Button = ({children, background}) => {
+const Button = ({children, background, ...rest}) => {
   return (
-    <ButtonStyle background={background}>{children}</ButtonStyle>
+    <ButtonStyle background={background} {...rest}>{children}</ButtonStyle>
   )
+}
+
+Button.defaultProps = {
+  background : "HeechanBlue"
 }
 
 export default Button

@@ -28,10 +28,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   .App {
-    width: 100%;
+    height: 100%;
   }
   
-  button {
+  button, input {
     background: none;
     color: inherit;
     border: none;
@@ -191,6 +191,6 @@ export const Theme = {
     HeechanBlue : "#586FE9",
   },
   size: {
-
+    mobileMaxWidth : 1000,
   }
 }
