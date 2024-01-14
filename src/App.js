@@ -7,7 +7,7 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 
 const Test = styled.div`
-  height: var(--header-height);
+  height: var(--footer-height);
   background-color: #f00;
 `
 

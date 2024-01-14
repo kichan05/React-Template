@@ -4,9 +4,12 @@ import {useEffect, useRef} from "react";
 const FooterStyle = styled.footer`
   
   & > div {
+    width: 100%;
     height: 100%;
+    max-width: ${p => p.theme.size.mobileMaxWidth}px;
     
     padding: 12px;
+    margin: 0 auto;
   }
 `
 
