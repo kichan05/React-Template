@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
+import Button from "./Button";
 
 const PageStyle = styled.div`
   height: 100%;
@@ -14,10 +16,13 @@ const PageStyle = styled.div`
 `
 
 const Page = () => {
+  const uiState = useUiState()
+  const uiDispatch = useUiDispatch()
+
   return (
     <PageStyle>
       <div className="content">
-        Hello
+        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.modal_toggle})}>모달 토글</Button>
       </div>
     </PageStyle>
   )

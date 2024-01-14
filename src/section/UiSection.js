@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Modal from "../component/Modal";
+import {useUiState} from "../context/UiReducer";
 
 const UiSectionStyle = styled.section`
   width: 100%;
@@ -13,9 +14,11 @@ const UiSectionStyle = styled.section`
 `
 
 const UiSection = () => {
+  const uiState = useUiState()
+
   return (
     <UiSectionStyle>
-      <Modal/>
+      <Modal isShow={uiState.isModalShow}/>
     </UiSectionStyle>
   )
 }

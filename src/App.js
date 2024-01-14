@@ -4,8 +4,10 @@ import {Resize} from "./component/Resize";
 import {Theme} from "./style/theme";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
-import Button from "./component/Button";
 import UiSection from "./section/UiSection";
+import React from "react";
+import {UiContextProvider} from "./context/UiReducer";
+import Page from "./component/Page";
 
 const Test = styled.div`
   height: var(--footer-height);
@@ -13,17 +15,21 @@ const Test = styled.div`
 `
 
 function App() {
+  // const uiDispatch = useUiDispatch()
+
   return (
     <div className="App">
       <ThemeProvider theme={Theme}>
         <GlobalStyle/>
         <Resize/>
 
-        <Header/>
-        <Button>Hello World</Button>
-        <Footer/>
+        <UiContextProvider>
+          <Header/>
+          <Page/>
+          <Footer/>
+          <UiSection/>
+        </UiContextProvider>
 
-        <UiSection/>
       </ThemeProvider>
     </div>
   );

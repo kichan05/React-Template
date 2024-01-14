@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "./Button";
+import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
 
 const ModalStyle = styled.div`
   width: 100%;
@@ -28,10 +29,12 @@ const ModalContent = styled.div`
 `
 
 const Modal = ({isShow}) => {
+  const uiDispatch = useUiDispatch()
+
   return isShow && (
-    <ModalStyle>
+    <ModalStyle onClick={() => uiDispatch({type : UI_ACTION_TYPE.modal_hide})}>
       <ModalContent>
-        <Button>닫기</Button>
+        <Button onClick={() => uiDispatch({type : UI_ACTION_TYPE.modal_hide})}>닫기</Button>
       </ModalContent>
     </ModalStyle>
   )
