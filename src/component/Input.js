@@ -15,6 +15,10 @@ const InputStyle = styled.input`
     font-weight: 500;
     opacity: 0.7;
   }
+
+  &:focus {
+    border: 1px solid ${p => p.theme.color.Gray5};
+  }
 `
 
 const Input = ({...rest}) => {
