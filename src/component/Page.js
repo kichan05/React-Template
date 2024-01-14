@@ -3,7 +3,6 @@ import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
 import Button from "./Button";
 
 const PageStyle = styled.div`
-  height: 100%;
   background-color: #f00;
   
   & > .content {

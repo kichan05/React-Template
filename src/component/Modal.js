@@ -1,6 +1,27 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import Button from "./Button";
 import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
+import {useEffect, useState} from "react";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`
 
 const ModalStyle = styled.div`
   width: 100%;
@@ -17,6 +38,9 @@ const ModalStyle = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
+  animation-name: ${p => p.isShow ? fadeIn : fadeOut};
+  animation-duration: 500ms;
 `
 
 const ModalContent = styled.div`
@@ -30,11 +54,25 @@ const ModalContent = styled.div`
 
 const Modal = ({isShow}) => {
   const uiDispatch = useUiDispatch()
+  const [isAnimation, setIsAnimation] = useState(false)
 
-  return isShow && (
-    <ModalStyle onClick={() => uiDispatch({type : UI_ACTION_TYPE.modal_hide})}>
+  useEffect(() => {
+    if (!isShow) {
+      setIsAnimation(true)
+      setTimeout(() => {
+        setIsAnimation(false)
+      }, 490)
+    }
+  }, [isShow])
+
+  const closeModal = () => {
+    uiDispatch({type: UI_ACTION_TYPE.modal_hide})
+  }
+
+  return (isShow || isAnimation) && (
+    <ModalStyle onClick={closeModal} isShow={isShow}>
       <ModalContent>
-        <Button onClick={() => uiDispatch({type : UI_ACTION_TYPE.modal_hide})}>닫기</Button>
+        <Button onClick={closeModal}>닫기</Button>
       </ModalContent>
     </ModalStyle>
   )
