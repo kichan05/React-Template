@@ -35,7 +35,7 @@ const ButtonColor = css`
 const ButtonStyle = styled.button`
   width: ${props => props.isFullWidth ? '100%' : 'unset'};
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
 
   border-radius: 6px;
   padding: 12px;

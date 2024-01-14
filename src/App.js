@@ -1,10 +1,11 @@
 import {GlobalStyle} from "./style/GlobalStyle";
 import styled, {ThemeProvider} from "styled-components";
 import {Resize} from "./component/Resize";
-import Input from "./component/Input";
 import {Theme} from "./style/theme";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import Button from "./component/Button";
+import UiSection from "./section/UiSection";
 
 const Test = styled.div`
   height: var(--footer-height);
@@ -19,8 +20,10 @@ function App() {
         <Resize/>
 
         <Header/>
-        <Test>Hello</Test>
+        <Button>Hello World</Button>
         <Footer/>
+
+        <UiSection/>
       </ThemeProvider>
     </div>
   );
