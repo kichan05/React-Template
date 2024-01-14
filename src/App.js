@@ -1,9 +1,15 @@
 import {GlobalStyle} from "./style/GlobalStyle";
-import {ThemeProvider} from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
 import {Resize} from "./component/Resize";
 import Input from "./component/Input";
 import {Theme} from "./style/theme";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
+
+const Test = styled.div`
+  height: var(--header-height);
+  background-color: #f00;
+`
 
 function App() {
   return (
@@ -13,7 +19,8 @@ function App() {
         <Resize/>
 
         <Header/>
-        <Input placeholder={"name"}/>
+        <Test>Hello</Test>
+        <Footer/>
       </ThemeProvider>
     </div>
   );
