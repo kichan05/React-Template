@@ -1,19 +1,27 @@
 import styled, {css} from "styled-components";
-import {backgrounds, darken, lighten} from "polished";
+import {lighten} from "polished";
 
 const ButtonColor = css`
-  ${({theme, background}) => {
-    let bgColor;
-    if (background.slice(0, 1) === "#") {
-      bgColor = background
-    } else {
-      bgColor = theme.color[background]
-    }
+  ${({theme, textColor, background}) => {
+  let bgColor;
+  if (background.slice(0, 1) === "#") {
+    bgColor = background
+  } else {
+    bgColor = theme.color[background]
+  }
 
-    return css`
+  let txtColor;
+  if (textColor.slice(0, 1) === "#") {
+    txtColor = textColor
+  } else {
+    txtColor = theme.color[textColor]
+  }
+
+  return css`
+      color: ${txtColor};
       background-color: ${bgColor};
 
-      &:hover {
+      &:hover, &:focus {
         background-color: ${lighten(0.05, bgColor)};
       }
 
@@ -21,11 +29,11 @@ const ButtonColor = css`
         background-color: ${bgColor};
       }
     `
-  }}
+}}
 `
 
 const ButtonStyle = styled.button`
-  color: ${props => props.theme.color.Gray0};
+  width: ${props => props.isFullWidth ? '100%' : 'unset'};
   font-size: 16px;
   font-weight: 400;
 
@@ -35,20 +43,24 @@ const ButtonStyle = styled.button`
   ${ButtonColor};
   
   transition: 200ms;
+  display: inline-flex;
+  justify-content: center;
   
-  &:hover {
-    transform: translateY(-3px);
+  &:hover, &:focus {
+    transform: translateY(-2px);
   }
 `
 
-const Button = ({children, background, ...rest}) => {
+const Button = ({children, textColor, background, isFullWidth, ...rest}) => {
   return (
-    <ButtonStyle background={background} {...rest}>{children}</ButtonStyle>
+    <ButtonStyle textColor={textColor} background={background} isFullWidth={isFullWidth} {...rest}>{children}</ButtonStyle>
   )
 }
 
 Button.defaultProps = {
-  background : "HeechanBlue"
+  textColor: "Gray1",
+  background: "HeechanBlue",
+  isFullWidth: false,
 }
 
 export default Button
