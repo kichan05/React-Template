@@ -3,6 +3,12 @@ import {useEffect, useRef} from "react";
 
 const HeaderStyle = styled.header`
   width: 100%;
+  height: 64px;
+  
+  background-color: ${p => p.theme.color.Gray1};
+  
+  position: fixed;
+  top: 0;
   
   & > div {
     width: 100%;
@@ -18,11 +24,12 @@ const Header = () => {
   const headerElement = useRef()
   useEffect(() => {
     const height = headerElement.current.clientHeight
+    console.log(height)
     document.documentElement.style.setProperty("--header-height", `${height}px`)
-  }, [])
+  })
   return (
-    <HeaderStyle>
-      <div ref={headerElement}>
+    <HeaderStyle ref={headerElement}>
+      <div>
         <h1>헤더</h1>
       </div>
     </HeaderStyle>

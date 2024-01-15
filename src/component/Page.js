@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
 import Button from "./Button";
+import {PageBasicStyle} from "../style/BasicStyle";
 
 const PageStyle = styled.div`
+  ${PageBasicStyle};
+  
   background-color: #f00;
   
   & > .content {
-    width: 100%;
-    max-width: ${({theme}) => theme.size.mobileMaxWidth}px;
-    
-    margin: 0 auto;
     background-color: #0f0;
   }
 `

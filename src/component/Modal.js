@@ -40,7 +40,7 @@ const ModalStyle = styled.div`
   left: 0;
 
   animation-name: ${p => p.isShow ? fadeIn : fadeOut};
-  animation-duration: 500ms;
+  animation-duration: 250ms;
 `
 
 const ModalContent = styled.div`
@@ -61,7 +61,7 @@ const Modal = ({isShow}) => {
       setIsAnimation(true)
       setTimeout(() => {
         setIsAnimation(false)
-      }, 490)
+      }, 240)
     }
   }, [isShow])
 

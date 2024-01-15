@@ -46,6 +46,8 @@ const ButtonStyle = styled.button`
   display: inline-flex;
   justify-content: center;
   
+  user-select: none;
+  
   &:hover, &:focus {
     transform: translateY(-2px);
   }
