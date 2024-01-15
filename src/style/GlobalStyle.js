@@ -16,19 +16,8 @@ export const GlobalStyle = createGlobalStyle`
   
   body {
     min-width: 320px;
-  }
-  
-  body {
-    height: calc(var(--vh) * 100);
-    //height: 100vh;
-  }
-  
-  #root {
-    height: 100%;
-  }
-  
-  .App {
-    height: 100%;
+    
+    background-color: ${p => p.theme.color.Gray3};
   }
   
   button, input {
