@@ -1,22 +1,17 @@
 import {createGlobalStyle} from "styled-components";
+import {InitialStyle} from "./InitialStyle";
+import {FontStyle} from "./Font";
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: SUIT;
-    src: url("./../font/SUIT-Variable.ttf");
-  }
+  ${InitialStyle};
+  ${FontStyle}
   
   *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
     font-family: SUIT, serif;
   }
   
   body {
     min-width: 320px;
-    
     background-color: ${p => p.theme.color.Gray3};
   }
   

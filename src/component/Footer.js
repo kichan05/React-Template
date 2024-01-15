@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {useEffect, useRef} from "react";
 
 const FooterStyle = styled.footer`
-  height: 300px;
   & > div {
     width: 100%;
     height: 100%;

@@ -7,7 +7,7 @@ import Footer from "./component/Footer";
 import UiSection from "./section/UiSection";
 import React from "react";
 import {UiContextProvider} from "./context/UiReducer";
-import Page from "./component/Page";
+import Page from "./page/Page";
 
 const Test = styled.div`
   height: var(--footer-height);

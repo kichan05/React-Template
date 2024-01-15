@@ -23,11 +23,31 @@ const fadeOut = keyframes`
   }
 `
 
+const scaleUp = keyframes`
+  0% {
+    transform: scale(0.975);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+`
+
+const scaleDown = keyframes`
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.975);
+  }
+`
+
 const ModalStyle = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 
   pointer-events: auto;
 
@@ -41,6 +61,7 @@ const ModalStyle = styled.div`
 
   animation-name: ${p => p.isShow ? fadeIn : fadeOut};
   animation-duration: 250ms;
+  animation-timing-function: ease-out;
 `
 
 const ModalContent = styled.div`
@@ -50,6 +71,10 @@ const ModalContent = styled.div`
   background-color: #fff;
   border-radius: 8px;
   padding: 12px;
+  
+  animation-name: ${p => p.isShow ? scaleUp : scaleDown};
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
 `
 
 const Modal = ({isShow}) => {
@@ -65,13 +90,16 @@ const Modal = ({isShow}) => {
     }
   }, [isShow])
 
-  const closeModal = () => {
+  const closeModal = (e) => {
+    if(e.target !== e.currentTarget)
+      return
+
     uiDispatch({type: UI_ACTION_TYPE.modal_hide})
   }
 
   return (isShow || isAnimation) && (
     <ModalStyle onClick={closeModal} isShow={isShow}>
-      <ModalContent>
+      <ModalContent isShow={isShow}>
         <Button onClick={closeModal}>닫기</Button>
       </ModalContent>
     </ModalStyle>
