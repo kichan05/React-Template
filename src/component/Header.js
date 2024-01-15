@@ -3,7 +3,6 @@ import {useEffect, useRef} from "react";
 
 const HeaderStyle = styled.header`
   width: 100%;
-  height: 64px;
   
   background-color: ${p => p.theme.color.Gray1};
   
@@ -15,8 +14,12 @@ const HeaderStyle = styled.header`
     height: 100%;
     max-width: ${p => p.theme.size.mobileMaxWidth}px;
 
-    padding: 12px;
+    padding: 20px 16px;
     margin: 0 auto;
+  }
+  
+  & h1 {
+    font-size: 28px;
   }
 `
 
