@@ -15,8 +15,6 @@ const Test = styled.div`
 `
 
 function App() {
-  // const uiDispatch = useUiDispatch()
-
   return (
     <div className="App">
       <ThemeProvider theme={Theme}>
