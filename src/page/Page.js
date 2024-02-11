@@ -25,16 +25,7 @@ const Page = () => {
     <PageStyle>
       <div className="content">
         <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.modal_toggle})}>모달 토글</Button>
-        <Button onClick={() => {
-          uiDispatch({type:UI_ACTION_TYPE.toast_show, message: "Hello Toast " + count})
-          setCount(count + 1)
-        }}>토스트가 슛</Button>
-
         <IconButton onClick={() => {alert("Hello World")}}><LuImagePlus/></IconButton>
-
-        <ul>
-          {uiState.toastMessageQue.map(i => <li>{i}</li>)}
-        </ul>
       </div>
     </PageStyle>
   )

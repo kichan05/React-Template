@@ -20,7 +20,6 @@ const UiSection = () => {
   return (
     <UiSectionStyle>
       <Modal isShow={uiState.isModalShow}/>
-      <ToastMessage message={uiState.toastMessage}/>
     </UiSectionStyle>
   )
 }
