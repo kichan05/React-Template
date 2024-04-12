@@ -26,6 +26,7 @@ const Page = () => {
       <div className="content">
         <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.modal_toggle})}>모달 토글</Button>
         <IconButton onClick={() => {alert("Hello World")}}><LuImagePlus/></IconButton>
+        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.bottomSheet_show})}>모달 업</Button>
       </div>
     </PageStyle>
   )

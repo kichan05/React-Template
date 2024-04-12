@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Modal from "../component/Modal";
 import {useUiState} from "../context/UiReducer";
-import {ToastMessage} from "../component/ToastMessage";
+import {BottomSheet} from "../component/BottomSheet";
 
 const UiSectionStyle = styled.section`
   width: 100%;
@@ -20,6 +20,7 @@ const UiSection = () => {
   return (
     <UiSectionStyle>
       <Modal isShow={uiState.isModalShow}/>
+      <BottomSheet isShow={uiState.isBottomSheetShow}/>
     </UiSectionStyle>
   )
 }

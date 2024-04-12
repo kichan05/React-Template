@@ -22,7 +22,7 @@ const ButtonColor = css`
       background-color: ${bgColor};
 
       &:hover, &:focus {
-        background-color: ${lighten(0.05, bgColor)};
+        background-color: ${lighten(0.025, bgColor)};
       }
 
       &:active {
