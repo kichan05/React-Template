@@ -94,7 +94,7 @@ const Modal = ({isShow}) => {
     if(e.target !== e.currentTarget)
       return
 
-    uiDispatch({type: UI_ACTION_TYPE.modal_hide})
+    uiDispatch({type: UI_ACTION_TYPE.MODAL_HIDE})
   }
 
   return (isShow || isAnimation) && (

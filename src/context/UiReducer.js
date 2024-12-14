@@ -1,13 +1,13 @@
 import React, {useContext, useReducer} from "react";
 
 export const UI_ACTION_TYPE = {
-  modal_show: "MODAL_SHOW",
-  modal_hide: "MODAL_HIDE",
-  modal_toggle: "MODAL_TOGGLE",
+  MODAL_SHOW: "MODAL_SHOW",
+  MODAL_HIDE: "MODAL_HIDE",
+  MODAL_TOGGLE: "MODAL_TOGGLE",
 
-  bottomSheet_show : "BOTTOM_SHEET_OPEN",
-  bottomSheet_hide : "BOTTOM_SHEET_HIDE",
-  bottomSheet_toggle : "BOTTOM_SHEET_TOGGLE",
+  BOTTOM_SHEET_SHOW : "BOTTOM_SHEET_OPEN",
+  BOTTOM_SHEET_HIDE : "BOTTOM_SHEET_HIDE",
+  BOTTOM_SHEET_TOGGLE : "BOTTOM_SHEET_TOGGLE",
 }
 
 const uiState = {
@@ -17,32 +17,32 @@ const uiState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case UI_ACTION_TYPE.modal_show:
+    case UI_ACTION_TYPE.MODAL_SHOW:
       return {
         ...state,
         isModalShow: true
       }
-    case UI_ACTION_TYPE.modal_hide:
+    case UI_ACTION_TYPE.MODAL_HIDE:
       return {
         ...state,
         isModalShow: false
       }
-    case UI_ACTION_TYPE.modal_toggle:
+    case UI_ACTION_TYPE.MODAL_TOGGLE:
       return {
         ...state,
         isModalShow: !state.isModalShow
       }
-    case UI_ACTION_TYPE.bottomSheet_show:
+    case UI_ACTION_TYPE.BOTTOM_SHEET_SHOW:
       return {
         ...state,
         isBottomSheetShow: true
       }
-    case UI_ACTION_TYPE.bottomSheet_hide:
+    case UI_ACTION_TYPE.BOTTOM_SHEET_HIDE:
       return {
         ...state,
         isBottomSheetShow: false
       }
-    case UI_ACTION_TYPE.bottomSheet_toggle:
+    case UI_ACTION_TYPE.BOTTOM_SHEET_TOGGLE:
       return {
         ...state,
         isBottomSheetShow: !state.isBottomSheetShow

@@ -24,9 +24,9 @@ const Page = () => {
   return (
     <PageStyle>
       <div className="content">
-        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.modal_toggle})}>모달 토글</Button>
+        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.MODAL_TOGGLE})}>모달 토글</Button>
         <IconButton onClick={() => {alert("Hello World")}}><LuImagePlus/></IconButton>
-        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.bottomSheet_show})}>모달 업</Button>
+        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.BOTTOM_SHEET_SHOW})}>모달 업</Button>
       </div>
     </PageStyle>
   )

@@ -94,7 +94,7 @@ export const BottomSheet = ({isShow}) => {
 
     if (!buttons) {
       if ((y >= yMax - 10 || y <= yMin)) {
-        uiDispatch({type: UI_ACTION_TYPE.bottomSheet_hide})
+        uiDispatch({type: UI_ACTION_TYPE.BOTTOM_SHEET_HIDE})
       }
 
       setBottomSheetState({x: 0, y: 0})
@@ -113,7 +113,7 @@ export const BottomSheet = ({isShow}) => {
 
     if(target !== currentTarget)
       return
-    uiDispatch({type: UI_ACTION_TYPE.bottomSheet_hide})
+    uiDispatch({type: UI_ACTION_TYPE.BOTTOM_SHEET_HIDE})
   }
 
   return (
