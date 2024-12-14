@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import {useUiState} from "../context/UiReducer";
-import LoadingDialog from "../component/organisms/LoadingDialog";
-import {AlertMessageList} from "../component/organisms/AlertMessageList";
+import {useUiState} from "../context/UiReducer.js";
+import LoadingDialog from "../component/organisms/LoadingDialog.js";
 
 const UiSectionStyle = styled.section`
   width: 100%;

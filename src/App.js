@@ -1,13 +1,13 @@
-import {GlobalStyle} from "./style/GlobalStyle";
+import {GlobalStyle} from "./style/GlobalStyle.js";
 import styled, {ThemeProvider} from "styled-components";
-import {Resize} from "./component/Resize";
-import {Theme} from "./style/theme";
-import Header from "./component/organisms/Header";
-import Footer from "./component/organisms/Footer";
-import UiSection from "./section/UiSection";
+import {Resize} from "./component/Resize.js";
+import {Theme} from "./style/theme.js";
+import Header from "./component/organisms/Header.js";
+import Footer from "./component/organisms/Footer.js";
+import UiSection from "./section/UiSection.js";
 import React from "react";
-import {UiContextProvider} from "./context/UiReducer";
-import Page from "./page/Page";
+import {UiContextProvider} from "./context/UiReducer.js";
+import Page from "./page/Page.js";
 
 const Test = styled.div`
   height: var(--footer-height);

@@ -1,7 +1,7 @@
 import {createGlobalStyle} from "styled-components";
-import {InitialStyle} from "./InitialStyle";
-import {FontStyle} from "./Font";
-import {spaceStyle} from "./SpaceStyle";
+import {InitialStyle} from "./InitialStyle.js";
+import {FontStyle} from "./Font.js";
+import {spaceStyle} from "./SpaceStyle.js";
 
 export const GlobalStyle = createGlobalStyle`
   ${InitialStyle};
