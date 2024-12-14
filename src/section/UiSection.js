@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import Modal from "../component/Modal";
 import {useUiState} from "../context/UiReducer";
-import {BottomSheet} from "../component/organisms/BottomSheet";
 import LoadingDialog from "../component/organisms/LoadingDialog";
 
 const UiSectionStyle = styled.section`
@@ -20,8 +18,8 @@ const UiSection = () => {
 
   return (
     <UiSectionStyle>
-      <Modal isShow={uiState.isModalShow}/>
-      <BottomSheet isShow={uiState.isBottomSheetShow}/>
+      {/*<Modal isShow={uiState.isModalShow}/>*/}
+      {/*<BottomSheet isShow={uiState.isBottomSheetShow}/>*/}
       <LoadingDialog isShow={uiState.isLoadingModalShow}/>
     </UiSectionStyle>
   )

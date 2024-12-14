@@ -8,7 +8,6 @@ import {IconButton} from "../component/atoms/IconButton";
 import CheckItem from "../component/atoms/CheckItem";
 import RadioButton from "../component/atoms/RadioButton";
 import InputLabel from "../component/atoms/InputLabel";
-import {NullSafePrint} from "../component/atoms/NullSafePrint";
 
 const PageStyle = styled.div`
   ${PageBasicStyle};
