@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 import {useEffect, useState} from "react";
-import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
+import {UI_ACTION_TYPE, useUiDispatch} from "../../context/UiReducer";
 
 const ToastStyle = styled.div`
   color: ${p => p.theme.color.Gray2};

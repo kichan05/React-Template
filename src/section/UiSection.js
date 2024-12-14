@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Modal from "../component/Modal";
 import {useUiState} from "../context/UiReducer";
-import {BottomSheet} from "../component/BottomSheet";
-import LoadingDialog from "../component/LoadingDialog";
+import {BottomSheet} from "../component/organisms/BottomSheet";
+import LoadingDialog from "../component/organisms/LoadingDialog";
 
 const UiSectionStyle = styled.section`
   width: 100%;
