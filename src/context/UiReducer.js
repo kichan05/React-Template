@@ -8,11 +8,16 @@ export const UI_ACTION_TYPE = {
   BOTTOM_SHEET_SHOW : "BOTTOM_SHEET_OPEN",
   BOTTOM_SHEET_HIDE : "BOTTOM_SHEET_HIDE",
   BOTTOM_SHEET_TOGGLE : "BOTTOM_SHEET_TOGGLE",
+
+  LOADING_MODAL_SHOW : "loadingModalShow",
+  LOADING_MODAL_HIDE : "loadingModalHide",
+  LOADING_MODAL_TOGGLE : "loadingModalToggle",
 }
 
 const uiState = {
   isModalShow: false,
   isBottomSheetShow : false,
+  isLoadingModalShow: false,
 }
 
 function reducer(state, action) {
@@ -46,6 +51,21 @@ function reducer(state, action) {
       return {
         ...state,
         isBottomSheetShow: !state.isBottomSheetShow
+      }
+    case UI_ACTION_TYPE.LOADING_MODAL_SHOW:
+      return {
+        ...state,
+        isLoadingModalShow: true
+      }
+    case UI_ACTION_TYPE.LOADING_MODAL_HIDE:
+      return {
+        ...state,
+        isLoadingModalShow: false
+      }
+    case UI_ACTION_TYPE.LOADING_MODAL_TOGGLE:
+      return {
+        ...state,
+        isLoadingModalShow: !state.isLoadingModalShow
       }
     default:
       throw "Undefined ui reducer action type"

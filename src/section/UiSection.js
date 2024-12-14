@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Modal from "../component/Modal";
 import {useUiState} from "../context/UiReducer";
 import {BottomSheet} from "../component/BottomSheet";
+import LoadingDialog from "../component/LoadingDialog";
 
 const UiSectionStyle = styled.section`
   width: 100%;
@@ -21,6 +22,7 @@ const UiSection = () => {
     <UiSectionStyle>
       <Modal isShow={uiState.isModalShow}/>
       <BottomSheet isShow={uiState.isBottomSheetShow}/>
+      <LoadingDialog isShow={uiState.isLoadingModalShow}/>
     </UiSectionStyle>
   )
 }

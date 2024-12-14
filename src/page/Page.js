@@ -8,9 +8,9 @@ import {IconButton} from "../component/IconButton";
 
 const PageStyle = styled.div`
   ${PageBasicStyle};
-  
+
   background-color: #f00;
-  
+
   & > .content {
     background-color: #0f0;
   }
@@ -24,9 +24,17 @@ const Page = () => {
   return (
     <PageStyle>
       <div className="content">
-        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.MODAL_TOGGLE})}>모달 토글</Button>
-        <IconButton onClick={() => {alert("Hello World")}}><LuImagePlus/></IconButton>
-        <Button onClick={() => uiDispatch({type:UI_ACTION_TYPE.BOTTOM_SHEET_SHOW})}>모달 업</Button>
+        <Button onClick={() => uiDispatch({type: UI_ACTION_TYPE.MODAL_TOGGLE})}>모달 토글</Button>
+        <IconButton onClick={() => {
+          alert("Hello World")
+        }}><LuImagePlus/></IconButton>
+        <Button onClick={() => uiDispatch({type: UI_ACTION_TYPE.BOTTOM_SHEET_SHOW})}>모달 업</Button>
+        <Button onClick={() => {
+          uiDispatch({type: UI_ACTION_TYPE.LOADING_MODAL_SHOW})
+          setTimeout(() => {
+            uiDispatch({type: UI_ACTION_TYPE.LOADING_MODAL_HIDE})
+          }, 1000)
+        }}>로딩한다</Button>
       </div>
     </PageStyle>
   )

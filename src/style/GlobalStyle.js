@@ -1,10 +1,12 @@
 import {createGlobalStyle} from "styled-components";
 import {InitialStyle} from "./InitialStyle";
 import {FontStyle} from "./Font";
+import {spaceStyle} from "./SpaceStyle";
 
 export const GlobalStyle = createGlobalStyle`
   ${InitialStyle};
-  ${FontStyle}
+  ${FontStyle};
+  ${spaceStyle};
   
   *, *::before, *::after {
     font-family: SUIT, serif;
