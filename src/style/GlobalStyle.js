@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   ${spaceStyle};
   
   *, *::before, *::after {
-    font-family: SUIT, serif;
+    font-family: SUIT, sans-serif;
   }
   
   body {
