@@ -5,6 +5,8 @@ import {PageBasicStyle} from "../style/BasicStyle";
 import {useState} from "react";
 import {LuImagePlus} from "react-icons/lu";
 import {IconButton} from "../component/IconButton";
+import CheckItem from "../component/CheckItem";
+import RadioButton from "../component/RadioButton";
 
 const PageStyle = styled.div`
   ${PageBasicStyle};
@@ -35,6 +37,8 @@ const Page = () => {
             uiDispatch({type: UI_ACTION_TYPE.LOADING_MODAL_HIDE})
           }, 1000)
         }}>로딩한다</Button>
+        <CheckItem isChecked={true}>dasdads</CheckItem>
+        <RadioButton isChecked={true}>Man</RadioButton>
       </div>
     </PageStyle>
   )
