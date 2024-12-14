@@ -7,6 +7,7 @@ import {LuImagePlus} from "react-icons/lu";
 import {IconButton} from "../component/IconButton";
 import CheckItem from "../component/CheckItem";
 import RadioButton from "../component/RadioButton";
+import InputLabel from "../component/InputLabel";
 
 const PageStyle = styled.div`
   ${PageBasicStyle};
@@ -39,6 +40,7 @@ const Page = () => {
         }}>로딩한다</Button>
         <CheckItem isChecked={true}>dasdads</CheckItem>
         <RadioButton isChecked={true}>Man</RadioButton>
+        <InputLabel label={"sads"} placeholder={"sada"}/>
       </div>
     </PageStyle>
   )
