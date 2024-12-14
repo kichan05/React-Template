@@ -65,9 +65,8 @@ const LoadingDialogStyle = styled.div`
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.33);
-
   pointer-events: auto;
-  
+
   ${fadeAnimation};
 
   .content {

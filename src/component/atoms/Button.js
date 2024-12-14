@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {lighten} from "polished";
+import React from "react";
 
 const ButtonColor = css`
   ${({theme, textColor, background}) => {
@@ -48,7 +49,7 @@ const ButtonStyle = styled.button`
   
   user-select: none;
   
-  &:hover, &:focus {
+  &:hover {
     transform: translateY(-2px);
   }
 `
@@ -65,4 +66,4 @@ Button.defaultProps = {
   isFullWidth: false,
 }
 
-export default Button
+export default React.memo(Button)

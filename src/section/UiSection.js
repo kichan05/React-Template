@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {useUiState} from "../context/UiReducer";
 import LoadingDialog from "../component/organisms/LoadingDialog";
+import {AlertMessageList} from "../component/organisms/AlertMessageList";
 
 const UiSectionStyle = styled.section`
   width: 100%;
@@ -21,6 +22,7 @@ const UiSection = () => {
       {/*<Modal isShow={uiState.isModalShow}/>*/}
       {/*<BottomSheet isShow={uiState.isBottomSheetShow}/>*/}
       <LoadingDialog isShow={uiState.isLoadingModalShow}/>
+      {/*<AlertMessageList/>*/}
     </UiSectionStyle>
   )
 }

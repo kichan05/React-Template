@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components";
 import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
 import Button from "../component/atoms/Button";
@@ -20,7 +21,6 @@ const PageStyle = styled.div`
 `
 
 const Page = () => {
-  const uiState = useUiState()
   const uiDispatch = useUiDispatch()
   const [count, setCount] = useState(0)
 
@@ -38,12 +38,14 @@ const Page = () => {
             uiDispatch({type: UI_ACTION_TYPE.LOADING_MODAL_HIDE})
           }, 1000)
         }}>로딩한다</Button>
-        <CheckItem isChecked={true}>dasdads</CheckItem>
-        <RadioButton isChecked={true}>Man</RadioButton>
+        <CheckItem isChecked={true} onCheck={() => {}}>dasdads</CheckItem>
+        <RadioButton isChecked={true} onCheck={() => {}}>Man</RadioButton>
         <InputLabel label={"sads"} placeholder={"sada"}/>
+        <Button
+          onClick={() => uiDispatch({type: UI_ACTION_TYPE.addAlertMessage, message: "Hello World"})}>dasdas</Button>
       </div>
     </PageStyle>
   )
 }
 
-export default Page
+export default React.memo(Page)

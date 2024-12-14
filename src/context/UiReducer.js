@@ -5,19 +5,24 @@ export const UI_ACTION_TYPE = {
   MODAL_HIDE: "MODAL_HIDE",
   MODAL_TOGGLE: "MODAL_TOGGLE",
 
-  BOTTOM_SHEET_SHOW : "BOTTOM_SHEET_OPEN",
-  BOTTOM_SHEET_HIDE : "BOTTOM_SHEET_HIDE",
-  BOTTOM_SHEET_TOGGLE : "BOTTOM_SHEET_TOGGLE",
+  BOTTOM_SHEET_SHOW: "BOTTOM_SHEET_OPEN",
+  BOTTOM_SHEET_HIDE: "BOTTOM_SHEET_HIDE",
+  BOTTOM_SHEET_TOGGLE: "BOTTOM_SHEET_TOGGLE",
 
-  LOADING_MODAL_SHOW : "loadingModalShow",
-  LOADING_MODAL_HIDE : "loadingModalHide",
-  LOADING_MODAL_TOGGLE : "loadingModalToggle",
+  LOADING_MODAL_SHOW: "loadingModalShow",
+  LOADING_MODAL_HIDE: "loadingModalHide",
+  LOADING_MODAL_TOGGLE: "loadingModalToggle",
+
+  addAlertMessage: "ADD_ALERT_MESSAGE",
+  remoteAlertMessage: "REMOVE_ALERT_MESSAGE",
 }
 
 const uiState = {
   isModalShow: false,
-  isBottomSheetShow : false,
+  isBottomSheetShow: false,
   isLoadingModalShow: false,
+  alertMessageList: [],
+  alertId : 0,
 }
 
 function reducer(state, action) {
@@ -67,6 +72,17 @@ function reducer(state, action) {
         ...state,
         isLoadingModalShow: !state.isLoadingModalShow
       }
+    case UI_ACTION_TYPE.addAlertMessage:
+      return {
+        ...state,
+        alertMessageList: [...state.alertMessageList, {id: state.alertId, message: action.message}],
+        alertId: state.alertId + 1,
+      }
+    case UI_ACTION_TYPE.remoteAlertMessage:
+      return {
+        ...state,
+        alertMessageList: state.alertMessageList.filter(m => m.id !== action.messageId)
+      }
     default:
       throw "Undefined ui reducer action type"
   }
@@ -89,14 +105,14 @@ export const UiContextProvider = ({children}) => {
 
 export function useUiState() {
   const context = useContext(UiState)
-  if(!context)
-      throw new Error("Cannot find UiState context")
+  if (!context)
+    throw new Error("Cannot find UiState context")
   return context
 }
 
 export function useUiDispatch() {
   const context = useContext(UiDispatch)
-  if(!context)
-      throw new Error("Cannot find UiDispatch context")
+  if (!context)
+    throw new Error("Cannot find UiDispatch context")
   return context
 }
