@@ -12,7 +12,6 @@ const LoadingSpinner = styled.div`
   border: 3px solid ${p => p.theme.color.Gray4};
   box-sizing: border-box;
   border-top-color: ${p => p.theme.color.Gray6};
-  // border-bottom-color: ${p => p.theme.color.Gray6};
   border-radius: 100%;
   animation: ${spin} 1s linear infinite;
 `;

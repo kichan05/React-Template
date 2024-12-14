@@ -90,8 +90,6 @@ const LoadingDialogStyle = styled.div`
 `
 
 const LoadingDialog = ({isShow, title}) => {
-  const uiDispatch = useUiDispatch();
-
   return (
     <CSSTransition in={isShow} timeout={250} unmountOnExit>
       {state =>
