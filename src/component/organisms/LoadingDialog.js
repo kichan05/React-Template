@@ -1,9 +1,7 @@
-import LoadingSpinner from "../atoms/LoadingSpinner";
+import LoadingSpinner from "../atoms/LoadingSpinner.js";
 import {css, keyframes, styled} from "styled-components";
-import {Title} from "../atoms/BasicLayout";
+import {Title} from "../atoms/BasicLayout.js";
 import {CSSTransition} from "react-transition-group";
-import {useEffect} from "react";
-import {UI_ACTION_TYPE, useUiDispatch} from "../../context/UiReducer";
 
 //todo: 애니메이션 만들어보자
 const fadeIn = keyframes`

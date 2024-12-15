@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {borderColor} from "polished";
-import {color} from "../../style/theme";
+import {color} from "../../style/theme.js";
 
 const IconButtonStyle = styled.button`
   width: 45px;

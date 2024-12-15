@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from "./Input.js";
 import styled from "styled-components";
 
 const InputLabelStyle = styled.label`

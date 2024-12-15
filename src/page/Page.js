@@ -1,14 +1,14 @@
 import React from "react"
 import styled from "styled-components";
-import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
-import Button from "../component/atoms/Button";
-import {PageBasicStyle} from "../style/BasicStyle";
+import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer.js";
+import Button from "../component/atoms/Button.js";
+import {PageBasicStyle} from "../style/BasicStyle.js";
 import {useState} from "react";
 import {LuImagePlus} from "react-icons/lu";
-import {IconButton} from "../component/atoms/IconButton";
-import CheckItem from "../component/atoms/CheckItem";
-import RadioButton from "../component/atoms/RadioButton";
-import InputLabel from "../component/atoms/InputLabel";
+import {IconButton} from "../component/atoms/IconButton.js";
+import CheckItem from "../component/atoms/CheckItem.js";
+import RadioButton from "../component/atoms/RadioButton.js";
+import InputLabel from "../component/atoms/InputLabel.js";
 
 const PageStyle = styled.div`
   ${PageBasicStyle};
