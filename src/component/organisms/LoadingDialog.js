@@ -1,6 +1,6 @@
 import LoadingSpinner from "../atoms/LoadingSpinner.js";
 import {css, keyframes, styled} from "styled-components";
-import {Title} from "../atoms/BasicLayout.js";
+import {Title} from "../atoms/BasicLayout.tsx";
 import {CSSTransition} from "react-transition-group";
 
 //todo: 애니메이션 만들어보자

@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 import {CSSTransition} from "react-transition-group";
-import Button from "../atoms/Button";
+import Button from "../atoms/Button.js";
 import {useState} from "react";
 import {UI_ACTION_TYPE, useUiDispatch} from "../../context/UiReducer";
 

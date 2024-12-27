@@ -2,20 +2,29 @@ import styled, {css} from "styled-components";
 import {lighten} from "polished";
 import React from "react";
 
-const ButtonColor = css`
+interface ButtonProps{
+  textColor?: string;
+  background?: string;
+  isFullWidth?: boolean;
+  onClick?: () => void;
+  children: React.ReactNode;
+  type?: "button" | "reset" | "submit";
+}
+
+const ButtonColor = css<ButtonProps>`
   ${({theme, textColor, background}) => {
   let bgColor;
-  if (background.slice(0, 1) === "#") {
+  if (background?.at(0) === "#") {
     bgColor = background
   } else {
-    bgColor = theme.color[background]
+    bgColor = theme.color[background!!]
   }
 
   let txtColor;
-  if (textColor.slice(0, 1) === "#") {
+  if (textColor?.at(0) === "#") {
     txtColor = textColor
   } else {
-    txtColor = theme.color[textColor]
+    txtColor = theme.color[textColor!!]
   }
 
   return css`
@@ -33,7 +42,7 @@ const ButtonColor = css`
 }}
 `
 
-const ButtonStyle = styled.button`
+const ButtonStyle = styled.button<ButtonProps>`
   width: ${props => props.isFullWidth ? '100%' : 'unset'};
   font-size: 16px;
   font-weight: 500;
@@ -54,25 +63,15 @@ const ButtonStyle = styled.button`
   }
 `
 
-type ButtonProps = {
-  textColor?: string,
-  background?: string,
-  isFullWidth?: boolean,
-  onClick?: () => void,
-  children: React.ReactNode,
-  type?: string
-}
-
-const Button : React.FC<ButtonProps> = ({textColor, background, isFullWidth, children, ...rest}) => {
+const Button : React.FC<ButtonProps> = ({
+    textColor="Gray1",
+    background="HeechanBlue",
+    children,
+    ...rest
+}) => {
   return (
-    <ButtonStyle textColor={textColor} background={background} isFullWidth={isFullWidth} {...rest}>{children}</ButtonStyle>
+    <ButtonStyle textColor={textColor} background={background} {...rest}>{children}</ButtonStyle>
   )
-}
-
-Button.defaultProps = {
-  textColor: "Gray1",
-  background: "HeechanBlue",
-  isFullWidth: false,
 }
 
 export default React.memo(Button)

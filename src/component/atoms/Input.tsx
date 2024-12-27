@@ -36,12 +36,11 @@ const InputStyle = styled.input`
 `
 
 export type InputProps = {
-  value?: string | number,
   placeholder? : string,
   name?: string,
   readOnly? : boolean
 } & (
-  | {onChange : (e : string) => void; register? : never}
+  | {value?: string | number, onChange : (e : string) => void; register? : never}
   | {register : UseFormRegisterReturn<any>; onChange? : never}
 );
 

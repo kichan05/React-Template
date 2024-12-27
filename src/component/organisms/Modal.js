@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components";
-import Button from "../atoms/Button";
+import Button from "../atoms/Button.js";
 import {UI_ACTION_TYPE, useUiDispatch} from "../../context/UiReducer";
 import {useEffect, useState} from "react";
 
