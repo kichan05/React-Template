@@ -2,8 +2,18 @@ import {FiCheck} from "react-icons/fi";
 import styled, {css} from "styled-components";
 import {FaCircleCheck, FaRegCircleDot} from "react-icons/fa6";
 import {FaRegCircle} from "react-icons/fa";
+import React from "react";
 
-export const RadioButton = ({isChecked, onCheck, children}) => {
+type RadioButtonProps = {
+  onCheck: (isChecked: boolean) => void,
+} & RadioButtonStyleProps
+
+type RadioButtonStyleProps = {
+  isChecked: boolean,
+  children: React.ReactNode
+}
+
+export const RadioButton : React.FC<RadioButtonProps> = ({isChecked, onCheck, children}) => {
   return (
     <RadioButtonStyle isChecked={isChecked} onClick={() => onCheck(!isChecked)}>
       {isChecked ? <FaRegCircleDot className={"check-icon"}/>: <FaRegCircle className={"check-icon"}/>}
@@ -12,7 +22,7 @@ export const RadioButton = ({isChecked, onCheck, children}) => {
   )
 }
 
-const RadioButtonStyle = styled.span`
+const RadioButtonStyle = styled.span<RadioButtonStyleProps>`
   font-size: 1em;
   color: ${p => p.theme.color.Gray9};
   display: inline-flex;
