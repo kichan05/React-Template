@@ -21,9 +21,9 @@ const InputStyle = styled.input`
   }
 `
 
-const Input = ({...rest}) => {
+const Input = ({register, ...rest}) => {
   return (
-    <InputStyle {...rest}/>
+    <InputStyle {...register} {...rest}/>
   )
 }
 

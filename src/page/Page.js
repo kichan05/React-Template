@@ -9,6 +9,9 @@ import {IconButton} from "../component/atoms/IconButton.js";
 import CheckItem from "../component/atoms/CheckItem.js";
 import RadioButton from "../component/atoms/RadioButton.js";
 import InputLabel from "../component/atoms/InputLabel.js";
+import Input from "../component/atoms/Input.js";
+import {useForm} from "react-hook-form";
+import {logDOM} from "@testing-library/react";
 
 const PageStyle = styled.div`
   ${PageBasicStyle};
@@ -23,26 +26,29 @@ const PageStyle = styled.div`
 const Page = () => {
   const uiDispatch = useUiDispatch()
   const [count, setCount] = useState(0)
+  const {register, handleSubmit, reset, watch, formState: {errors}} = useForm({
+    defaultValues: {
+      name: "한지연",
+      age: 28
+    }
+  })
 
   return (
     <PageStyle>
       <div className="content">
-        <Button onClick={() => uiDispatch({type: UI_ACTION_TYPE.MODAL_TOGGLE})}>모달 토글</Button>
-        <IconButton onClick={() => {
-          alert("Hello World")
-        }}><LuImagePlus/></IconButton>
-        <Button onClick={() => uiDispatch({type: UI_ACTION_TYPE.BOTTOM_SHEET_SHOW})}>모달 업</Button>
-        <Button onClick={() => {
-          uiDispatch({type: UI_ACTION_TYPE.LOADING_MODAL_SHOW})
-          setTimeout(() => {
-            uiDispatch({type: UI_ACTION_TYPE.LOADING_MODAL_HIDE})
-          }, 1000)
-        }}>로딩한다</Button>
-        <CheckItem isChecked={true} onCheck={() => {}}>dasdads</CheckItem>
-        <RadioButton isChecked={true} onCheck={() => {}}>Man</RadioButton>
-        <InputLabel label={"sads"} placeholder={"sada"}/>
-        <Button
-          onClick={() => uiDispatch({type: UI_ACTION_TYPE.addAlertMessage, message: "Hello World"})}>dasdas</Button>
+        <form onSubmit={handleSubmit((data) => console.log(data))}>
+          <Input register={register("name")} label={"name"} placeholder={"이름"}/>
+          <Input register={register("age", {valueAsNumber : true, max: 100, min:20})} type={"number"} label={"age"} placeholder={"나이"}/>
+          <Button type={"submit"}>전송</Button>
+        </form>
+        {errors.age ? "error" : "not-error"}
+        <Button onClick={() => console.log(errors)}>에러?</Button>
+        <div className="">
+          {watch("name")}
+          <br/>
+          {watch("age")}
+          <Button onClick={() => reset()}>리셋</Button>
+        </div>
       </div>
     </PageStyle>
   )
