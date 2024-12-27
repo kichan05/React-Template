@@ -1,6 +1,6 @@
 import {useUiState} from "../../context/UiReducer";
 import styled from "styled-components";
-import AlertItem from "../atoms/AlertItem";
+import AlertItem from "../atoms/AlertItem.jsx";
 
 export const AlertMessageList = () => {
   const uiState = useUiState();
