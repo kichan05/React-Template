@@ -6,7 +6,7 @@ import Footer from "./component/organisms/Footer.js";
 import UiSection from "./section/UiSection.js";
 import React from "react";
 import {UiContextProvider} from "./context/UiReducer.js";
-import Page from "./page/Page.js";
+import Page from "./page/Page";
 import {ThemeProvider} from "styled-components";
 
 const App : React.FC = () => {

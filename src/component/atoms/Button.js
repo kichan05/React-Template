@@ -54,7 +54,16 @@ const ButtonStyle = styled.button`
   }
 `
 
-const Button = ({children, textColor, background, isFullWidth, ...rest}) => {
+type ButtonProps = {
+  textColor?: string,
+  background?: string,
+  isFullWidth?: boolean,
+  onClick?: () => void,
+  children: React.ReactNode,
+  type: string
+}
+
+const Button : React.FC<ButtonProps> = ({textColor, background, isFullWidth, children, ...rest}) => {
   return (
     <ButtonStyle textColor={textColor} background={background} isFullWidth={isFullWidth} {...rest}>{children}</ButtonStyle>
   )
