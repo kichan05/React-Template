@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {useUiState} from "../context/UiReducer.js";
-import LoadingDialog from "../component/organisms/LoadingDialog.js";
+import LoadingDialog from "../component/organisms/LoadingDialog.tsx";
 
 const UiSectionStyle = styled.section`
   width: 100%;
@@ -20,7 +20,7 @@ const UiSection = () => {
     <UiSectionStyle>
       {/*<Modal isShow={uiState.isModalShow}/>*/}
       {/*<BottomSheet isShow={uiState.isBottomSheetShow}/>*/}
-      <LoadingDialog isShow={uiState.isLoadingModalShow}/>
+      <LoadingDialog isShow={uiState.isLoadingModalShow} message={"잠시만 기다려 주세용"}/>
       {/*<AlertMessageList/>*/}
     </UiSectionStyle>
   )

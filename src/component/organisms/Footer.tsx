@@ -13,10 +13,10 @@ const FooterStyle = styled.footer`
 `
 
 const Footer = () => {
-  const footerElement = useRef()
+  const footerElement = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    const height = footerElement.current.clientHeight
+    const height = footerElement.current?.clientHeight
     document.documentElement.style.setProperty("--footer-height", `${height}px`)
   }, [])
 

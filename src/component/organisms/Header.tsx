@@ -24,10 +24,9 @@ const HeaderStyle = styled.header`
 `
 
 const Header = () => {
-  const headerElement = useRef()
+  const headerElement = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
-    const height = headerElement.current.clientHeight
-    console.log(height)
+    const height = headerElement.current?.clientHeight
     document.documentElement.style.setProperty("--header-height", `${height}px`)
   })
   return (
