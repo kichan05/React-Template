@@ -1,5 +1,4 @@
 import {GlobalStyle} from "./style/GlobalStyle.js";
-import styled, {ThemeProvider} from "styled-components";
 import {Resize} from "./component/Resize.js";
 import {Theme} from "./style/theme.js";
 import Header from "./component/organisms/Header.js";
@@ -8,13 +7,9 @@ import UiSection from "./section/UiSection.js";
 import React from "react";
 import {UiContextProvider} from "./context/UiReducer.js";
 import Page from "./page/Page.js";
+import {ThemeProvider} from "styled-components";
 
-const Test = styled.div`
-  height: var(--footer-height);
-  background-color: #f00;
-`
-
-function App() {
+const App : React.FC = () => {
   return (
     <div className="App">
       <ThemeProvider theme={Theme}>
