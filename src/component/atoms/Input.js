@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {useForm} from "react-hook-form";
+import {UseFormRegisterReturn} from "react-hook-form";
 
 const InputStyle = styled.input`
   color: ${p => p.theme.color.Gray8};
@@ -21,9 +23,20 @@ const InputStyle = styled.input`
   }
 `
 
-const Input = ({register, ...rest}) => {
+export type InputProps = {
+  value: string | number,
+  placeholder? : string,
+  name?: string,
+  disable? : boolean,
+} & (
+  | {onChange : (string) => void; register? : never}
+  | {register : UseFormRegisterReturn; onChange? : never}
+);
+
+const Input : React.FC<InputProps> = ({...rest}) => {
+  const {register} = useForm()
   return (
-    <InputStyle {...register} {...rest}/>
+    <InputStyle {...rest}/>
   )
 }
 
