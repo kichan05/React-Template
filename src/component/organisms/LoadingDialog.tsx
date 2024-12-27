@@ -2,7 +2,7 @@ import LoadingSpinner from "../atoms/LoadingSpinner";
 import {css, keyframes, styled} from "styled-components";
 import {Title} from "../atoms/BasicLayout";
 import {CSSTransition} from "react-transition-group";
-import {fadeAnimation} from "../../animation/FadeAnimation.js";
+import {fadeAnimation} from "../../animation/FadeAnimation";
 import React from "react";
 
 type LoadingDialogProps = {

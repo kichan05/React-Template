@@ -1,4 +1,5 @@
 import {css, keyframes} from "styled-components";
+import {AnimationState} from "../type";
 
 const sideUp = keyframes`
   0% {
@@ -20,7 +21,7 @@ const sideDown = keyframes`
   }
 `
 
-export const verticalAnimation = css`
+export const verticalAnimation = css<AnimationState>`
   animation-duration: 260ms;
 
   ${({state}) => css`

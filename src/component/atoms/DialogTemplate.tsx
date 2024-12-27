@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import {fadeAnimation} from "../../animation/FadeAnimation.js";
+import {fadeAnimation} from "../../animation/FadeAnimation";
+import {AnimationState} from "../../type";
 
-export const DialogTemplate = styled.div`
+export const DialogTemplate = styled.div<AnimationState>`
   width: 100%;
   height: 100%;
 

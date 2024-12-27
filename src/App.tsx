@@ -1,5 +1,5 @@
 import {GlobalStyle} from "./style/GlobalStyle.js";
-import {Resize} from "./component/Resize.js";
+import {Resize} from "./component/Resize";
 import {Theme} from "./style/theme.js";
 import Header from "./component/organisms/Header";
 import Footer from "./component/organisms/Footer";
