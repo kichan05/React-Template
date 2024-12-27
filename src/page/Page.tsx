@@ -5,6 +5,7 @@ import Button from "../component/atoms/Button";
 import footer from "../component/organisms/Footer";
 import Input from "../component/atoms/Input";
 import {set, useForm} from "react-hook-form";
+import InputLabel from "../component/atoms/InputLabel";
 
 type Information = { name: string, description: string }
 
@@ -64,8 +65,8 @@ const Page = () => {
     return (
         <PageStyle>
             <div className="content">
-                <Input placeholder={"sdas"} register={register("name")} readOnly={a}/>
-                <Button onClick={() => setA(!a)}>sdasdas</Button>
+                <InputLabel label={"이름"} placeholder={"sdas"} register={register("name")}/>
+                <Button onClick={() => setA(!a)}>클릭</Button>
             </div>
         </PageStyle>
     )

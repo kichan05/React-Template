@@ -1,5 +1,6 @@
 import Input from "./Input.js";
 import styled from "styled-components";
+import type {InputProps} from "./Input.js";
 
 const InputLabelStyle = styled.label`
   & .label {
@@ -14,11 +15,14 @@ const InputLabelStyle = styled.label`
   }
 `
 
-const InputLabel = ({label, children, ...rest}) => {
+type InputLabelProps = {
+  label: string,
+} & InputProps
+
+const InputLabel : React.FC<InputLabelProps> = ({label, ...rest}) => {
   return (
     <InputLabelStyle>
       <div className={"label"}>{label}</div>
-      {children}
       <Input {...rest}/>
     </InputLabelStyle>
   )
