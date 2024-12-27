@@ -6,6 +6,7 @@ import footer from "../component/organisms/Footer";
 import Input from "../component/atoms/Input";
 import {set, useForm} from "react-hook-form";
 import InputLabel from "../component/atoms/InputLabel";
+import CheckItem from "../component/atoms/CheckItem";
 
 type Information = { name: string, description: string }
 
@@ -66,6 +67,7 @@ const Page = () => {
         <PageStyle>
             <div className="content">
                 <InputLabel label={"이름"} placeholder={"sdas"} register={register("name")}/>
+                <CheckItem isChecked={false} onCheck={()=>{}}/>
             </div>
         </PageStyle>
     )
