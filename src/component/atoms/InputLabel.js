@@ -1,6 +1,6 @@
-import Input from "./Input.js";
+import Input from "./Input.tsx";
 import styled from "styled-components";
-import type {InputProps} from "./Input.js";
+import type {InputProps} from "./Input.tsx";
 
 const InputLabelStyle = styled.label`
   & .label {

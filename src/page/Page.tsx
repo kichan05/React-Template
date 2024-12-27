@@ -60,13 +60,12 @@ const Page = () => {
         }
     });
 
-    const [a, setA] = useState(false)
+    const [a, setA] = useState("")
 
     return (
         <PageStyle>
             <div className="content">
                 <InputLabel label={"이름"} placeholder={"sdas"} register={register("name")}/>
-                <Button onClick={() => setA(!a)}>클릭</Button>
             </div>
         </PageStyle>
     )
