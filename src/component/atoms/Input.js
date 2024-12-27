@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {useForm} from "react-hook-form";
 import {UseFormRegisterReturn} from "react-hook-form";
 
@@ -11,7 +11,8 @@ const InputStyle = styled.input`
   border-radius: 6px;
   
   padding: 12px;
-  background-color: ${props => props.theme.color.Gray1};
+  background-color: ${({theme}) => theme.color.Gray1};
+
   
   &::placeholder {
     font-weight: 500;
@@ -21,22 +22,31 @@ const InputStyle = styled.input`
   &:focus {
     border: 1px solid ${p => p.theme.color.Gray5};
   }
+  //todo: 조금더 SEXY한 방법을 찾아보자
+  ${({theme, readOnly}) => readOnly && css`
+    background-color: ${theme.color.Gray3};
+    cursor: not-allowed;
+    user-select: none;
+
+    &:focus {
+      border: 1px solid ${p => p.theme.color.Gray4};
+    }
+  `}
 `
 
 export type InputProps = {
-  value: string | number,
+  value?: string | number,
   placeholder? : string,
   name?: string,
-  disable? : boolean,
+  readOnly? : boolean
 } & (
   | {onChange : (string) => void; register? : never}
-  | {register : UseFormRegisterReturn; onChange? : never}
+  | {register : UseFormRegisterReturn<any>; onChange? : never}
 );
 
-const Input : React.FC<InputProps> = ({...rest}) => {
-  const {register} = useForm()
+const Input : React.FC<InputProps> = ({register, ...rest}) => {
   return (
-    <InputStyle {...rest}/>
+    <InputStyle {...register} {...rest}/>
   )
 }
 

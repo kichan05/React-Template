@@ -4,7 +4,7 @@ import {PageBasicStyle} from "../style/BasicStyle.js";
 import Button from "../component/atoms/Button";
 import footer from "../component/organisms/Footer";
 import Input from "../component/atoms/Input";
-import {useForm} from "react-hook-form";
+import {set, useForm} from "react-hook-form";
 
 type Information = { name: string, description: string }
 
@@ -53,12 +53,19 @@ const MyForm = ({onSubmit}: MyFormProps) => {
 }
 
 const Page = () => {
-    const {register} = useForm();
+    const {register, watch} = useForm({
+        defaultValues: {
+            name: "Asdasd"
+        }
+    });
+
+    const [a, setA] = useState(false)
 
     return (
         <PageStyle>
             <div className="content">
-                <Input value={"asd"} placeholder={"sdas"} onChange={() => {}}/>
+                <Input placeholder={"sdas"} register={register("name")} readOnly={a}/>
+                <Button onClick={() => setA(!a)}>sdasdas</Button>
             </div>
         </PageStyle>
     )

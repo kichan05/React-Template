@@ -60,7 +60,7 @@ type ButtonProps = {
   isFullWidth?: boolean,
   onClick?: () => void,
   children: React.ReactNode,
-  type: string
+  type?: string
 }
 
 const Button : React.FC<ButtonProps> = ({textColor, background, isFullWidth, children, ...rest}) => {
