@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "axios": "^1.6.5",
     "electron": "^33.2.1",
     "immer": "^10.0.3",
@@ -17,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "styled-components": "^6.1.8",
+    "typescript": "^5.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
