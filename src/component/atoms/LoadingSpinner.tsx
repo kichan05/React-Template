@@ -6,7 +6,11 @@ const spin = keyframes`
   }
 `;
 
-const LoadingSpinner = styled.div`
+export type LoadingSpinnerProps = {
+    size : number
+}
+
+const LoadingSpinner = styled.div<LoadingSpinnerProps>`
   width: ${p => p.size}px;
   height: ${p => p.size}px;
   border: 3px solid ${p => p.theme.color.Gray4};

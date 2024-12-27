@@ -1,4 +1,4 @@
-import LoadingSpinner from "../atoms/LoadingSpinner.js";
+import LoadingSpinner from "../atoms/LoadingSpinner.tsx";
 import {css, keyframes, styled} from "styled-components";
 import {Title} from "../atoms/BasicLayout.tsx";
 import {CSSTransition} from "react-transition-group";
