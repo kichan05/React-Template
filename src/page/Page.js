@@ -28,7 +28,7 @@ const Page = () => {
   const [count, setCount] = useState(0)
   const {register, handleSubmit, reset, watch, formState: {errors}} = useForm({
     defaultValues: {
-      name: "한지연",
+      name: "박희찬",
       age: 28
     }
   })
